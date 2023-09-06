@@ -22,9 +22,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: |
-          sudo apt-get install -y python3 make g++
+          sudo npm install
       - name: Test
-        run: npm test
+        run: npm run test
 
   # build-alpine:
   #   runs-on: ubuntu-22.04
