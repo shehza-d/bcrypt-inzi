@@ -1,9 +1,9 @@
 [![NPM Version][npm-version-image]][npm-url]
 [![NPM Downloads][npm-downloads-image]][npm-url]
 
-![Test Cases workflows](https://img.shields.io/github/actions/workflow/status/shehza-d/bcrypt-inzi/test.yaml?branch=master)
+![Test Cases workflows](https://img.shields.io/github/actions/workflow/status/shehza-d/bcrypt-inzi/test.yaml?branch=master&label=Test%20Cases&logo=jest)
 
-![Test Cases workflows](https://img.shields.io/github/actions/workflow/status/mInzamamMalik/Bcrypt-inzi/test.yaml?branch=master)
+<!-- ![Test Cases workflows](https://img.shields.io/github/actions/workflow/status/mInzamamMalik/Bcrypt-inzi/test.yaml?branch=master) -->
 
 [npm-downloads-image]: https://badgen.net/npm/dy/bcrypt-inzi
 [npm-url]: https://npmjs.org/package/bcrypt-inzi
