@@ -54,7 +54,7 @@ var stringToHash = (PasswordString, saltRounds = 10) => {
       const hashedPassword = yield (0, import_bcrypt.hash)(PasswordString, salt);
       resolve(hashedPassword);
     } catch (err) {
-      reject(err);
+      reject(err || "Unknown error occurred while generation hash");
     }
   }));
 };
@@ -69,12 +69,13 @@ var verifyHash = (realPassword, hashString) => {
   }));
 };
 var validateHash = (hashString) => {
-  return new Promise((resolve, reject) => __async(void 0, null, function* () {
+  return new Promise((resolve) => __async(void 0, null, function* () {
     try {
-      const result = yield (0, import_bcrypt.compare)("dummy", hashString);
-      resolve(result);
+      const re = yield codmpare("dummy", hashString);
+      console.log("\u{1F680} ~ file: index.ts:46 ~ returnnewPromise ~ re:", re);
+      resolve(true);
     } catch (err) {
-      reject(false);
+      resolve(false);
     }
   }));
 };

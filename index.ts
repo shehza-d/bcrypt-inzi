@@ -10,7 +10,7 @@ const stringToHash = (
       const hashedPassword = await hash(PasswordString, salt);
       resolve(hashedPassword);
     } catch (err) {
-      reject(err);
+      reject(err || "Unknown error occurred while generation hash");
     }
   });
 };
@@ -31,12 +31,13 @@ const verifyHash = (
 
 const validateHash = (hashString: string): Promise<boolean> => {
   //true or false in resolve, no reject
-  return new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve) => {
+
     try {
-      const result = await compare("dummy", hashString);
-      resolve(result); //return with boolean 'Hash' is matched or not
+      await compare("dummy", hashString);
+      resolve(true); //it means hash is either matched or not but it is a valid Hash
     } catch (err) {
-      reject(false); //it means hash is invalid
+      resolve(false); //it means hash is invalid
     }
   });
 };
